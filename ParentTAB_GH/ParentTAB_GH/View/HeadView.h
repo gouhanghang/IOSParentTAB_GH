@@ -1,0 +1,18 @@
+//
+//  HeadView.h
+//  ParentTAB_GH
+//
+//  Created by 苟应航 on 2018/4/11.
+//  Copyright © 2018年 GouHang. All rights reserved.
+
+
+//
+
+#import <UIKit/UIKit.h>
+
+@interface HeadView : UIView
+-(instancetype)initWithFrame:(CGRect)frame;
+@property(nonatomic,strong)UILabel *lenad;
+@property(nonatomic,strong)UIImageView *imageview;
+@property(nonatomic,strong)NSString *titilestr;
+@end

@@ -1,0 +1,62 @@
+//
+//  PrefixHeader.pch
+//  ParentTAB_GH
+//
+//  Created by 苟应航 on 2018/4/9.
+//  Copyright © 2018年 GouHang. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+#import <UIKit/UIKit.h>
+#import "Masonry.h"
+#import "LeftOneCell.h"
+#import "RightOneCell.h"
+#import "ValidateTool.h"
+#import "ObjectMode.h"
+#import "MJExtension.h"
+#import "CollectionHeader.h"
+#import "MultilevelMenus.h"
+#import "MBProgressHUD.h"
+#import "MBProgressHUD+ADD.h"
+#define GHhax(a) [ValidateTool colorWithHex:a]
+#define GHFont(a) [UIFont systemFontOfSize:a]
+#define GHxiti(sizea) [UIFont fontWithName:@"PingFangSC-Light" size:sizea]
+#define GHColor(r,g,b)[UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+#define  selectcolor GHColor(21, 155, 247)
+#define   noselectcolor GHColor(49, 65, 73)
+#define   WiteColors [UIColor whiteColor]
+#define KAllBcakColor    GHColor(49,65,73)
+#define  SCREEN_WIDTH  [UIScreen mainScreen].bounds.size.width
+#define  SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+#define  SCREEN_BOUNDS [UIScreen mainScreen].bounds
+#ifdef DEBUG
+
+#define NSSLog(FORMAT,...) fprintf(stderr,"\nfunction:%s line:%d content:%s\n",__FUNCTION__,__LINE__,[[NSString stringWithFormat:FORMAT,##__VA_ARGS__] UTF8String]);
+
+#else
+
+#define NSSLog(FORMAT, ...) nil
+
+#endif
+/**
+ * 手机判断
+ */
+#define IS_IPHONE_4 (([[UIScreen mainScreen] bounds].size.height-480)?NO:YES)
+#define IS_IPHONE_5                                                            \
+([UIScreen instancesRespondToSelector:@selector(currentMode)]                \
+? CGSizeEqualToSize(CGSizeMake(640.f, 1136.f),                      \
+[[UIScreen mainScreen] currentMode].size)       \
+: NO)
+
+#define IS_IPHONE_6 (([[UIScreen mainScreen] bounds].size.height-667)?NO:YES)
+
+#define IS_IPHONE_6PLUSH (([[UIScreen mainScreen] bounds].size.height-736)?NO:YES)
+
+#define iPhone4_Add(_num) (IS_IPHONE_4 ? _num : 0)
+
+#define iPhone6_Add(_num) (IS_IPHONE_6 ? _num : 0)
+
+#define iPhone6PLUSH_Add(_num) (IS_IPHONE_6PLUSH ? _num : 0)
+
+#endif /* PrefixHeader_pch */
